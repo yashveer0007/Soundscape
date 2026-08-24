@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — SoundScape</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">SoundScape</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="library.html">My Library</a></li>
+        <li><a href="artists.html">Artists</a></li>
+        <li><a href="events.html" aria-current="page">Events</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">Don't miss out</p>
+      <h1>Events</h1>
+      <p>Concerts and festivals worth clearing your calendar for.</p>
+      <div class="filter-chips" role="group" aria-label="Filter events by type">
+        <button class="filter-chip" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-chip" type="button" data-filter="concert" aria-pressed="false">Concerts</button>
+        <button class="filter-chip" type="button" data-filter="festival" aria-pressed="false">Festivals</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="spotlight">
+        <img class="spotlight-image" src="assets/images/twentyoneJPG.JPG" alt="Artwork for the Twenty One Pilots live show">
+        <div>
+          <span class="badge">Next Up</span>
+          <h2>Twenty One Pilots — Live</h2>
+          <p class="event-date">SEP 14 · 8:00 PM</p>
+          <p class="card-artist">The Marigold Room, Riverside</p>
+          <div class="spotlight-actions">
+            <button class="btn btn-primary save-btn" type="button" data-event-id="1" aria-pressed="false">Save Event</button>
+            <a class="btn btn-secondary" href="artists.html">About This Artist</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header"><h2>Upcoming Events</h2></div>
+      <div class="grid grid-3" id="upcoming-events-grid">
+        <article class="event-card" data-event-type="concert">
+          <img class="card-image" src="assets/images/twentyoneJPG.JPG" alt="Artwork for the Twenty One Pilots live show">
+          <div class="event-card-body">
+            <p class="event-date">SEP 14 · 8:00 PM</p>
+            <h3 class="card-title">Twenty One Pilots — Live</h3>
+            <p class="event-artist">Twenty One Pilots</p>
+            <p class="card-artist">The Marigold Room, Riverside</p>
+          </div>
+          <div class="event-footer">
+            <span class="badge">Concert</span>
+            <button class="btn btn-secondary btn-small save-btn" type="button" data-event-id="1" aria-pressed="false">Save Event</button>
+          </div>
+        </article>
+        <article class="event-card" data-event-type="festival">
+          <img class="card-image" src="assets/images/chainsmoker.jpg" alt="Artwork for Coastline Static Festival">
+          <div class="event-card-body">
+            <p class="event-date">SEP 27 · 4:00 PM</p>
+            <h3 class="card-title">Coastline Static Festival</h3>
+            <p class="event-artist">Various Artists</p>
+            <p class="card-artist">Harbor Park, Bay City</p>
+          </div>
+          <div class="event-footer">
+            <span class="badge badge-olive">Festival</span>
+            <button class="btn btn-secondary btn-small save-btn" type="button" data-event-id="2" aria-pressed="false">Save Event</button>
+          </div>
+        </article>
+        <article class="event-card" data-event-type="concert">
+          <img class="card-image" src="assets/images/chainsmoker.jpg" alt="Artwork for The Chainsmokers show">
+          <div class="event-card-body">
+            <p class="event-date">OCT 3 · 7:30 PM</p>
+            <h3 class="card-title">The Chainsmokers — Live</h3>
+            <p class="event-artist">The Chainsmokers</p>
+            <p class="card-artist">Vellum Hall, Downtown</p>
+          </div>
+          <div class="event-footer">
+            <span class="badge badge-peach">Concert</span>
+            <button class="btn btn-secondary btn-small save-btn" type="button" data-event-id="3" aria-pressed="false">Save Event</button>
+          </div>
+        </article>
+        <article class="event-card" data-event-type="concert">
+          <img class="card-image" src="assets/images/eminem.jpg" alt="Artwork for the Eminem live show">
+          <div class="event-card-body">
+            <p class="event-date">OCT 10 · 8:00 PM</p>
+            <h3 class="card-title">Eminem — Live</h3>
+            <p class="event-artist">Eminem</p>
+            <p class="card-artist">The Sky Blue Lounge, Uptown</p>
+          </div>
+          <div class="event-footer">
+            <span class="badge">Concert</span>
+            <button class="btn btn-secondary btn-small save-btn" type="button" data-event-id="4" aria-pressed="false">Save Event</button>
+          </div>
+        </article>
+        <article class="event-card" data-event-type="concert">
+          <img class="card-image" src="assets/images/mj.jpg" alt="Artwork for the Michael Jackson tribute night">
+          <div class="event-card-body">
+            <p class="event-date">OCT 18 · 7:00 PM</p>
+            <h3 class="card-title">Michael Jackson Tribute Night</h3>
+            <p class="event-artist">Tribute Show</p>
+            <p class="card-artist">Pistachio Room, Eastside</p>
+          </div>
+          <div class="event-footer">
+            <span class="badge badge-olive">Concert</span>
+            <button class="btn btn-secondary btn-small save-btn" type="button" data-event-id="5" aria-pressed="false">Save Event</button>
+          </div>
+        </article>
+        <article class="event-card" data-event-type="festival">
+          <img class="card-image" src="assets/images/twentyoneJPG.JPG" alt="Artwork for Sticker Fest">
+          <div class="event-card-body">
+            <p class="event-date">NOV 2 · 12:00 PM</p>
+            <h3 class="card-title">Sticker Fest</h3>
+            <p class="event-artist">Various Artists</p>
+            <p class="card-artist">Meadow Grounds, Riverside</p>
+          </div>
+          <div class="event-footer">
+            <span class="badge badge-peach">Festival</span>
+            <button class="btn btn-secondary btn-small save-btn" type="button" data-event-id="6" aria-pressed="false">Save Event</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a class="logo" href="index.html">SoundScape</a>
+        <p>Your music. Your world.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SoundScape. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/lastfm-api.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

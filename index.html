@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoundScape — Your music. Your world.</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">SoundScape</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="library.html">My Library</a></li>
+        <li><a href="artists.html">Artists</a></li>
+        <li><a href="events.html">Events</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Track 01 — Welcome</p>
+      <h1>Your music.<br>Your <span class="highlight">world.</span></h1>
+      <p>A cozy corner of the internet for discovering new sounds, organizing your favorites, and keeping tabs on the shows you don't want to miss.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="discover.html">Explore Music</a>
+        <a class="btn btn-secondary" href="library.html">View Library</a>
+      </div>
+      <svg class="hero-disc" viewBox="0 0 220 220">
+        <circle cx="110" cy="110" r="105" fill="#2E4A5C"/>
+        <circle cx="110" cy="110" r="70" fill="none" stroke="#F7F1E2" stroke-width="1.5" opacity="0.3"/>
+        <circle cx="110" cy="110" r="34" fill="#EFB88C"/>
+        <circle cx="110" cy="110" r="6" fill="#F7F1E2"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Hand-picked</p>
+          <h2>Featured This Week</h2>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <img class="card-image" src="assets/images/mj.jpg" alt="Album cover for Thriller">
+          <div class="card-body">
+            <span class="badge badge-olive">Featured Album</span>
+            <h3 class="card-title">Thriller</h3>
+            <p class="card-artist">Michael Jackson</p>
+            <a class="btn btn-secondary btn-small" href="discover.html">Listen Now</a>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-image" src="assets/images/chainsmoker.jpg" alt="Cover art for Closer">
+          <div class="card-body">
+            <span class="badge">Featured Song</span>
+            <h3 class="card-title">Closer</h3>
+            <p class="card-artist">The Chainsmokers</p>
+            <a class="btn btn-secondary btn-small" href="discover.html">Listen Now</a>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-image" src="assets/images/twentyoneJPG.JPG" alt="Portrait of Twenty One Pilots">
+          <div class="card-body">
+            <span class="badge badge-peach">Featured Artist</span>
+            <h3 class="card-title">Twenty One Pilots</h3>
+            <p class="card-artist">Alternative rock &amp; hip hop</p>
+            <a class="btn btn-secondary btn-small" href="artists.html">View Profile</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">On repeat</p>
+          <h2>Trending Now</h2>
+        </div>
+        <a class="section-link" href="discover.html">View all &rarr;</a>
+      </div>
+      <div class="grid grid-4">
+        <article class="card">
+          <div class="card-image-wrap">
+            <img class="card-image" src="assets/images/mj.jpg" alt="Album cover for Thriller">
+            <button class="fav-btn" type="button" data-song-id="1" aria-pressed="false" aria-label="Add Thriller to favorites">♡</button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Thriller</h3>
+            <p class="card-artist">Michael Jackson</p>
+            <span class="badge">Pop</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-image-wrap">
+            <img class="card-image" src="assets/images/chainsmoker.jpg" alt="Album cover for Closer">
+            <button class="fav-btn" type="button" data-song-id="2" aria-pressed="false" aria-label="Add Closer to favorites">♡</button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Closer</h3>
+            <p class="card-artist">The Chainsmokers</p>
+            <span class="badge badge-olive">Electronic</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-image-wrap">
+            <img class="card-image" src="assets/images/twentyoneJPG.JPG" alt="Album cover for Stressed Out">
+            <button class="fav-btn" type="button" data-song-id="3" aria-pressed="false" aria-label="Add Stressed Out to favorites">♡</button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Stressed Out</h3>
+            <p class="card-artist">Twenty One Pilots</p>
+            <span class="badge badge-peach">Alt Rock</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-image-wrap">
+            <img class="card-image" src="assets/images/eminem.jpg" alt="Album cover for Lose Yourself">
+            <button class="fav-btn" type="button" data-song-id="4" aria-pressed="false" aria-label="Add Lose Yourself to favorites">♡</button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Lose Yourself</h3>
+            <p class="card-artist">Eminem</p>
+            <span class="badge">Hip Hop</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-image-wrap">
+            <img class="card-image" src="assets/images/mj.jpg" alt="Album cover for Billie Jean">
+            <button class="fav-btn" type="button" data-song-id="5" aria-pressed="false" aria-label="Add Billie Jean to favorites">♡</button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Billie Jean</h3>
+            <p class="card-artist">Michael Jackson</p>
+            <span class="badge">Pop</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-image-wrap">
+            <img class="card-image" src="assets/images/chainsmoker.jpg" alt="Album cover for Don't Let Me Down">
+            <button class="fav-btn" type="button" data-song-id="6" aria-pressed="false" aria-label="Add Don't Let Me Down to favorites">♡</button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Don't Let Me Down</h3>
+            <p class="card-artist">The Chainsmokers</p>
+            <span class="badge badge-olive">Electronic</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-image-wrap">
+            <img class="card-image" src="assets/images/twentyoneJPG.JPG" alt="Album cover for Heathens">
+            <button class="fav-btn" type="button" data-song-id="7" aria-pressed="false" aria-label="Add Heathens to favorites">♡</button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Heathens</h3>
+            <p class="card-artist">Twenty One Pilots</p>
+            <span class="badge badge-peach">Alt Rock</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-image-wrap">
+            <img class="card-image" src="assets/images/eminem.jpg" alt="Album cover for Without Me">
+            <button class="fav-btn" type="button" data-song-id="8" aria-pressed="false" aria-label="Add Without Me to favorites">♡</button>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Without Me</h3>
+            <p class="card-artist">Eminem</p>
+            <span class="badge">Hip Hop</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Don't miss out</p>
+          <h2>Upcoming Events</h2>
+        </div>
+        <a class="section-link" href="events.html">See all events &rarr;</a>
+      </div>
+      <div class="grid grid-3">
+        <article class="event-card">
+          <img class="card-image" src="assets/images/twentyoneJPG.JPG" alt="Artwork for the Twenty One Pilots live show">
+          <div class="event-card-body">
+            <p class="event-date">SEP 14 · 8:00 PM</p>
+            <h3 class="card-title">Twenty One Pilots — Live</h3>
+            <p class="card-artist">The Marigold Room, Riverside</p>
+          </div>
+          <div class="event-footer">
+            <span class="badge">Concert</span>
+            <button class="btn btn-secondary btn-small save-btn" type="button" data-event-id="1" aria-pressed="false">Save Event</button>
+          </div>
+        </article>
+        <article class="event-card">
+          <img class="card-image" src="assets/images/chainsmoker.jpg" alt="Artwork for Coastline Static Festival">
+          <div class="event-card-body">
+            <p class="event-date">SEP 27 · 4:00 PM</p>
+            <h3 class="card-title">Coastline Static Festival</h3>
+            <p class="card-artist">Harbor Park, Bay City</p>
+          </div>
+          <div class="event-footer">
+            <span class="badge badge-olive">Festival</span>
+            <button class="btn btn-secondary btn-small save-btn" type="button" data-event-id="2" aria-pressed="false">Save Event</button>
+          </div>
+        </article>
+        <article class="event-card">
+          <img class="card-image" src="assets/images/chainsmoker.jpg" alt="Artwork for The Chainsmokers show">
+          <div class="event-card-body">
+            <p class="event-date">OCT 3 · 7:30 PM</p>
+            <h3 class="card-title">The Chainsmokers — Live</h3>
+            <p class="card-artist">Vellum Hall, Downtown</p>
+          </div>
+          <div class="event-footer">
+            <span class="badge badge-peach">Concert</span>
+            <button class="btn btn-secondary btn-small save-btn" type="button" data-event-id="3" aria-pressed="false">Save Event</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a class="logo" href="index.html">SoundScape</a>
+        <p>Your music. Your world.</p>
+      </div>
+    </div>
+    <div class="footer-columns">
+      <nav>
+        <h2 class="footer-heading">Navigate</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="library.html">My Library</a></li>
+          <li><a href="artists.html">Artists</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SoundScape. All rights reserved.</p>
+      <p>Made for music lovers, everywhere.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/lastfm-api.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
