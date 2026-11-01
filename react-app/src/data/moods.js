@@ -1,11 +1,21 @@
 // Curated mood categories (no AI needed).
-// Each mood is a list of artists we search for, then combine into one mix.
+// Each mood is a list of artists or specific songs we combine into one mix.
+export const ARIJIT_SINGH_SONGS = [
+  { query: 'Tum Hi Ho Arijit Singh', title: 'Tum Hi Ho', artist: 'Arijit Singh', exactTitle: true, originalOnly: true, single: true },
+  { query: 'Channa Mereya Arijit Singh', title: 'Channa Mereya', artist: 'Arijit Singh', exactTitle: true, originalOnly: true, single: true },
+];
+
+export const SHREYA_GHOSHAL_SONGS = [
+  { query: 'Teri Ore Shreya Ghoshal', title: 'Teri Ore', artist: 'Shreya Ghoshal', exactTitle: true, originalOnly: true, single: true },
+  { query: 'Samjhawan Shreya Ghoshal', title: 'Samjhawan', artist: 'Shreya Ghoshal', exactTitle: true, originalOnly: true, single: true },
+];
+
 export const MOODS = {
   happy: {
     label: 'Happy',
     emoji: '😄',
     blurb: 'Bright, feel-good songs.',
-    artists: ['Pharrell Williams', 'Bruno Mars', 'Dua Lipa', 'Shreya Ghoshal'],
+    searches: ['Pharrell Williams', 'Bruno Mars', 'Dua Lipa', ...SHREYA_GHOSHAL_SONGS],
   },
   chill: {
     label: 'Chill',

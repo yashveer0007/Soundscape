@@ -32,3 +32,26 @@ export async function searchSongsByArtists(artists, limit = 12) {
     (song, index) => songs.findIndex((candidate) => candidate.id === song.id) === index
   );
 }
+
+export async function searchSongsForSelections(selections, limit = 12) {
+  const results = await Promise.all(
+    selections.map(async (selection) => {
+      if (typeof selection === 'string') return searchSongs(selection, limit);
+
+      const songs = await searchSongs(selection.query, 15);
+      const matches = songs.filter(
+        (song) =>
+          (selection.exactTitle
+            ? song.title.toLowerCase() === selection.title.toLowerCase()
+            : song.title.toLowerCase().includes(selection.title.toLowerCase())) &&
+          song.artist.toLowerCase().includes(selection.artist.toLowerCase()) &&
+          (!selection.originalOnly || !/lo[\s-]?fi|remix/i.test(`${song.title} ${song.album}`))
+      );
+      return selection.single ? matches.slice(0, 1) : matches;
+    })
+  );
+  const songs = results.flat();
+  return songs.filter(
+    (song, index) => songs.findIndex((candidate) => candidate.id === song.id) === index
+  );
+}

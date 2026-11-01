@@ -1,24 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { searchSongs } from '../api/itunes.js';
+import { searchSongsForSelections } from '../api/itunes.js';
 import { MOODS } from '../data/moods.js';
 
 // Search every artist in the mood, then merge the results into one list.
 export const fetchMoodSongs = createAsyncThunk('mood/fetchMoodSongs', async (mood) => {
-  const results = await Promise.all(
-    (MOODS[mood].searches ?? MOODS[mood].artists).map(async (search) => {
-      if (typeof search === 'string') return searchSongs(search, 8);
-
-      const songs = await searchSongs(search.query, 15);
-      return songs.filter(
-        (song) =>
-          song.title.toLowerCase().includes(search.title.toLowerCase()) &&
-          song.artist.toLowerCase().includes(search.artist.toLowerCase())
-      );
-    })
-  );
-  const all = results.flat();
-  // Remove duplicates (same song id)
-  return all.filter((s, i) => all.findIndex((x) => x.id === s.id) === i);
+  return searchSongsForSelections(MOODS[mood].searches ?? MOODS[mood].artists, 8);
 });
 
 const moodSlice = createSlice({

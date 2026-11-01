@@ -1,10 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchSongs } from '../api/itunes.js';
+import { searchSongsForSelections } from '../api/itunes.js';
 import { fetchSongs } from '../store/songsSlice.js';
 import SongGrid from '../components/SongGrid.jsx';
+import { ARIJIT_SINGH_SONGS, SHREYA_GHOSHAL_SONGS } from '../data/moods.js';
 
-const DEFAULT_ARTISTS = ['Karan Aujla', 'Shreya Ghoshal' , 'Harry Styles' , 'Arijit Singh', 'Taylor Swift', 'Ed Sheeran', 'Adele', 'Burna Boy', 'Drake', 'Rihanna' , 'BTS' , 'Badshah', 'Shawn Mendes', 'Justin Bieber', 'The Weeknd', 'Dua Lipa', 'Billie Eilish', 'Post Malone', 'Ariana Grande', 'Bruno Mars', 'Kendrick Lamar', 'Sia', 'Lady Gaga', 'Eminem', 'Kanye West', 'Jay-Z', 'Beyoncé', 'Rihanna', 'Nicki Minaj', 'Cardi B', 'Megan Thee Stallion', 'Doja Cat'];
+const DEFAULT_SELECTIONS = [
+  'Karan Aujla', 'Harry Styles', ...ARIJIT_SINGH_SONGS, 'Taylor Swift', 'Ed Sheeran',
+  'Adele', 'Burna Boy', 'Drake', 'Rihanna', 'BTS', 'Badshah', 'Shawn Mendes',
+  'Justin Bieber', 'The Weeknd', 'Dua Lipa', 'Billie Eilish', 'Post Malone',
+  'Ariana Grande', 'Bruno Mars', 'Kendrick Lamar', 'Sia', 'Lady Gaga', 'Eminem',
+  'Kanye West', 'Jay-Z', 'Beyoncé', 'Nicki Minaj', 'Cardi B', 'Megan Thee Stallion',
+  'Doja Cat', ...SHREYA_GHOSHAL_SONGS,
+];
 
 const SPIRITUAL_SONG_SEARCHES = [
   { query: 'Hanuman Chalisa Hariharan', title: 'Hanuman Chalisa', artist: 'Hariharan' },
@@ -24,7 +32,7 @@ export default function Discover() {
   // Debounce: wait until the user stops typing for 500ms before calling the API.
   useEffect(() => {
     const timer = setTimeout(() => {
-      dispatch(fetchSongs(term.trim() || DEFAULT_ARTISTS));
+      dispatch(fetchSongs(term.trim() || DEFAULT_SELECTIONS));
     }, 500);
     return () => clearTimeout(timer); // cancel if they type again
   }, [term, dispatch]);
@@ -32,19 +40,10 @@ export default function Discover() {
   useEffect(() => {
     let active = true;
 
-    Promise.all(
-      SPIRITUAL_SONG_SEARCHES.map(async ({ query, title, artist }) => {
-        const songs = await searchSongs(query, 15);
-        return songs.find(
-          (song) =>
-            song.title.toLowerCase().includes(title.toLowerCase()) &&
-            song.artist.toLowerCase().includes(artist.toLowerCase())
-        );
-      })
-    )
+    searchSongsForSelections(SPIRITUAL_SONG_SEARCHES)
       .then((songs) => {
         if (!active) return;
-        setSpiritualSongs(songs.filter(Boolean));
+        setSpiritualSongs(songs);
         setSpiritualStatus('succeeded');
       })
       .catch((fetchError) => {

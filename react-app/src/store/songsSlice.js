@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { searchSongs, searchSongsByArtists } from '../api/itunes.js';
+import { searchSongs, searchSongsForSelections } from '../api/itunes.js';
 
 // createAsyncThunk runs our fetch and automatically creates
 // pending / fulfilled / rejected actions for us.
 export const fetchSongs = createAsyncThunk('songs/fetchSongs', (term) =>
-  Array.isArray(term) ? searchSongsByArtists(term) : searchSongs(term)
+  Array.isArray(term) ? searchSongsForSelections(term) : searchSongs(term)
 );
 
 const songsSlice = createSlice({
